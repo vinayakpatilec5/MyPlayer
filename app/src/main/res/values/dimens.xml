@@ -1,0 +1,50 @@
+<resources>
+    <dimen name="dimen120">120dp</dimen>
+    <dimen name="dimen80">80dp</dimen>
+    <dimen name="dimen50">50dp</dimen>
+    <dimen name="dimen40">40dp</dimen>
+    <dimen name="dimen45">40dp</dimen>
+    <dimen name="dimen30">30dp</dimen>
+    <dimen name="dimen22">22dp</dimen>
+    <dimen name="dimen25">25dp</dimen>
+
+    <dimen name="dimen20">20dp</dimen>
+    <dimen name="dimen18">18dp</dimen>
+    <dimen name="dimen17">17dp</dimen>
+    <dimen name="dimen16">16dp</dimen>
+    <dimen name="dimen15">15dp</dimen>
+    <dimen name="dimen14">14dp</dimen>
+    <dimen name="dimen13">13dp</dimen>
+    <dimen name="dimen12">12dp</dimen>
+    <dimen name="dimen11">11dp</dimen>
+    <dimen name="dimen10">10dp</dimen>
+    <dimen name="dimen9">9dp</dimen>
+    <dimen name="dimen8">8dp</dimen>
+    <dimen name="dimen7">7dp</dimen>
+    <dimen name="dimen6">6dp</dimen>
+    <dimen name="dimen5">5dp</dimen>
+    <dimen name="dimen4">4dp</dimen>
+    <dimen name="dimen3.5">3.5dp</dimen>
+    <dimen name="dimen3">3dp</dimen>
+    <dimen name="dimen2.5">2.5dp</dimen>
+    <dimen name="dimen2">2dp</dimen>
+    <dimen name="dimen1">1dp</dimen>
+
+
+    <!-- TextSize generic dimensions -->
+    <dimen name="text_dimen20">20sp</dimen>
+    <dimen name="text_dimen18">18sp</dimen>
+    <dimen name="text_dimen16">16sp</dimen>
+    <dimen name="text_dimen15">15sp</dimen>
+    <dimen name="text_dimen14">14sp</dimen>
+    <dimen name="text_dimen13">13sp</dimen>
+    <dimen name="text_dimen12">12sp</dimen>
+    <dimen name="text_dimen11">11sp</dimen>
+    <dimen name="text_dimen10">10sp</dimen>
+    <dimen name="text_dimen9">9sp</dimen>
+    <dimen name="text_dimen8">8sp</dimen>
+    <dimen name="text_dimen7">7sp</dimen>
+    <dimen name="text_dimen6">6sp</dimen>
+    <dimen name="text_dimen5">5sp</dimen>
+   
+</resources>

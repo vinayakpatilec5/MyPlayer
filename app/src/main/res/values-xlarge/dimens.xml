@@ -1,0 +1,49 @@
+<resources>
+    <dimen name="dimen120">240dp</dimen>
+    <dimen name="dimen80">160dp</dimen>
+    <dimen name="dimen50">100dp</dimen>
+    <dimen name="dimen40">80dp</dimen>
+    <dimen name="dimen45">90dp</dimen>
+    <dimen name="dimen30">60dp</dimen>
+    <dimen name="dimen22">44dp</dimen>
+    <dimen name="dimen25">50dp</dimen>
+
+    <dimen name="oustlayout_dimen24">48dp</dimen>
+    <dimen name="oustlayout_dimen20">40dp</dimen>
+    <dimen name="oustlayout_dimen18">36dp</dimen>
+    <dimen name="oustlayout_dimen17">34dp</dimen>
+    <dimen name="oustlayout_dimen16">32dp</dimen>
+    <dimen name="oustlayout_dimen15">30dp</dimen>
+    <dimen name="oustlayout_dimen14">28dp</dimen>
+    <dimen name="oustlayout_dimen13">26dp</dimen>
+    <dimen name="oustlayout_dimen12">24dp</dimen>
+    <dimen name="oustlayout_dimen11">22dp</dimen>
+    <dimen name="oustlayout_dimen10">20dp</dimen>
+    <dimen name="oustlayout_dimen9">18dp</dimen>
+    <dimen name="oustlayout_dimen8">16dp</dimen>
+    <dimen name="oustlayout_dimen7">14dp</dimen>
+    <dimen name="oustlayout_dimen6">12dp</dimen>
+    <dimen name="oustlayout_dimen5">10dp</dimen>
+    <dimen name="oustlayout_dimen4">8dp</dimen>
+    <dimen name="oustlayout_dimen3.5">7dp</dimen>
+    <dimen name="oustlayout_dimen3">6dp</dimen>
+    <dimen name="oustlayout_dimen2.5">5dp</dimen>
+    <dimen name="oustlayout_dimen2">4dp</dimen>
+    <dimen name="oustlayout_dimen1">2dp</dimen>
+
+    <!-- TextSize generic dimensions -->
+    <dimen name="text_dimen20">40sp</dimen>
+    <dimen name="text_dimen18">36sp</dimen>
+    <dimen name="text_dimen16">32sp</dimen>
+    <dimen name="text_dimen15">30sp</dimen>
+    <dimen name="text_dimen14">28sp</dimen>
+    <dimen name="text_dimen13">26sp</dimen>
+    <dimen name="text_dimen12">24sp</dimen>
+    <dimen name="text_dimen11">22sp</dimen>
+    <dimen name="text_dimen10">20sp</dimen>
+    <dimen name="text_dimen9">18sp</dimen>
+    <dimen name="text_dimen8">16sp</dimen>
+    <dimen name="text_dimen7">14sp</dimen>
+    <dimen name="text_dimen6">12sp</dimen>
+    <dimen name="text_dimen5">10sp</dimen>
+</resources>

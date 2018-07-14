@@ -1,0 +1,44 @@
+<resources>
+    <dimen name="dimen120">180dp</dimen>
+    <dimen name="dimen80">120dp</dimen>
+    <dimen name="dimen50">75dp</dimen>
+    <dimen name="dimen40">60dp</dimen>
+    <dimen name="dimen45">67dp</dimen>
+    <dimen name="dimen30">45dp</dimen>
+    <dimen name="dimen22">33dp</dimen>
+    <dimen name="dimen25">37dp</dimen>
+
+    <dimen name="oustlayout_dimen24">36dp</dimen>
+    <dimen name="oustlayout_dimen20">30dp</dimen>
+    <dimen name="oustlayout_dimen18">27dp</dimen>
+    <dimen name="oustlayout_dimen17">26dp</dimen>
+    <dimen name="oustlayout_dimen16">24dp</dimen>
+    <dimen name="oustlayout_dimen15">23dp</dimen>
+    <dimen name="oustlayout_dimen14">21dp</dimen>
+    <dimen name="oustlayout_dimen13">20dp</dimen>
+    <dimen name="oustlayout_dimen12">18dp</dimen>
+    <dimen name="oustlayout_dimen11">17dp</dimen>
+    <dimen name="oustlayout_dimen10">15dp</dimen>
+    <dimen name="oustlayout_dimen9">14dp</dimen>
+    <dimen name="oustlayout_dimen8">12dp</dimen>
+    <dimen name="oustlayout_dimen7">11dp</dimen>
+    <dimen name="oustlayout_dimen6">9dp</dimen>
+    <dimen name="oustlayout_dimen5">8dp</dimen>
+    <dimen name="oustlayout_dimen4">6dp</dimen>
+    <dimen name="oustlayout_dimen3.5">5.5dp</dimen>
+    <dimen name="oustlayout_dimen3">5dp</dimen>
+    <dimen name="oustlayout_dimen2.5">3.8dp</dimen>
+    <dimen name="oustlayout_dimen2">3dp</dimen>
+    <dimen name="oustlayout_dimen1">1.5dp</dimen>
+
+    <!-- TextSize generic dimensions -->
+    <dimen name="text_dimen13">20sp</dimen>
+    <dimen name="text_dimen12">18sp</dimen>
+    <dimen name="text_dimen11">17sp</dimen>
+    <dimen name="text_dimen10">15sp</dimen>
+    <dimen name="text_dimen9">14sp</dimen>
+    <dimen name="text_dimen8">12sp</dimen>
+    <dimen name="text_dimen7">10sp</dimen>
+    <dimen name="text_dimen6">9sp</dimen>
+    <dimen name="text_dimen5">8sp</dimen>
+</resources>
