@@ -14,8 +14,6 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.google.gson.Gson;
-import com.mygamelogic.myplayer.Activity.PlayActivity;
 import com.mygamelogic.myplayer.Interfaces.MusicArrayInterface;
 import com.mygamelogic.myplayer.R;
 import com.mygamelogic.myplayer.Response.MusicResponseRow;
@@ -35,11 +33,6 @@ public class MusicArrayAdapter extends RecyclerView.Adapter<MusicArrayAdapter.My
         this.musicArrayInterface = musicArrayInterface;
     }
 
-    private boolean isSearchArray=false;
-    public void setSearchArray(boolean searchArray) {
-        isSearchArray = searchArray;
-    }
-
     public MusicArrayAdapter(Context context, List<MusicResponseRow> musicResponseRows) {
         this.musicResponseRows = musicResponseRows;
         this.context = context;
@@ -48,11 +41,6 @@ public class MusicArrayAdapter extends RecyclerView.Adapter<MusicArrayAdapter.My
         this.musicResponseRows=musicResponseRows;
         notifyDataSetChanged();
     }
-//variables to handle swipe on row for searc audio rows
-    private float x1, x2;
-    private float y1, y2;
-    private final int MIN_DISTANCE = 20;
-    private boolean touchedOnce = false;
 
     @Override
     public int getItemCount() {
@@ -65,7 +53,6 @@ public class MusicArrayAdapter extends RecyclerView.Adapter<MusicArrayAdapter.My
         private TextView textview_musictitle, textview_musiccontent;
         private ImageView imageview_musicrow;
         public RelativeLayout layout_mainrow,viewBackground;
-
         public MyViewHolder(View view) {
             super(view);
             layout_mainrow = (RelativeLayout) view.findViewById(R.id.layout_mainrow);
@@ -108,77 +95,12 @@ public class MusicArrayAdapter extends RecyclerView.Adapter<MusicArrayAdapter.My
                 }
             }
             holder.textview_musiccontent.setText(content);
-            if(isSearchArray){
-                holder.layout_mainrow.setOnTouchListener(new View.OnTouchListener() {
-                    @Override
-                    public boolean onTouch(View v, MotionEvent event) {
-                        int motionEvent = event.getAction();
-                        if (motionEvent == MotionEvent.ACTION_DOWN) {
-                            x1 = event.getX();
-                            y1 = event.getY();
-                            touchedOnce = true;
-                        } else if (motionEvent == MotionEvent.ACTION_MOVE) {
-                            if (touchedOnce) {
-                                x2 = event.getX();
-                                y2 = event.getY();
-                                float deltaX = x1 - x2;
-                                float deltaY = y1 - y2;
-                                if (deltaX > 0 && deltaY > 0) {
-                                    if (deltaX > deltaY) {
-                                        if (deltaX > MIN_DISTANCE) {
-                                            touchedOnce = false;
-                                            //left Swipe
-                                            musicArrayInterface.swipe(1);
-                                            return true;
-                                        }
-                                    }
-                                } else if (deltaX < 0 && deltaY > 0) {
-                                    if ((-deltaX) > deltaY) {
-                                        if ((-deltaX) > MIN_DISTANCE) {
-                                            touchedOnce = false;
-                                            //right swipe
-                                            musicArrayInterface.swipe(2);
-                                            return true;
-                                        }
-                                    }
-
-                                } else if (deltaX < 0 && deltaY < 0) {
-                                    if (deltaX < deltaY) {
-                                        if ((-deltaX) > MIN_DISTANCE) {
-                                            touchedOnce = false;
-                                            //right swipe
-                                            musicArrayInterface.swipe(2);
-                                            return true;
-                                        }
-                                    }
-                                } else if (deltaX > 0 && deltaY < 0) {
-                                    if (deltaX > (-deltaY)) {
-                                        if (deltaX > MIN_DISTANCE) {
-                                            touchedOnce = false;
-                                            //left swipe
-                                            musicArrayInterface.swipe(1);
-                                            return true;
-                                        }
-                                    }
-                                }
-                            }
-                            return false;
-                        }else if (motionEvent == MotionEvent.ACTION_UP) {
-                            if(touchedOnce){
-                                musicArrayInterface.tappedRow(position);
-                            }
-                        }
-                        return true;
-                    }
-                });
-            }else {
-                holder.layout_mainrow.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        musicArrayInterface.tappedRow(position);
-                    }
-                });
-            }
+            holder.layout_mainrow.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    musicArrayInterface.tappedRow(position);
+                }
+            });
         }catch (Exception e) {
             Log.e("Feed", "caught exception" + e.toString());
             e.printStackTrace();

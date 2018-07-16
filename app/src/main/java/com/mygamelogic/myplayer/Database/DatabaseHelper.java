@@ -39,8 +39,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         // create notes table
-        String query="CREATE TABLE favouriteTable(id  INTEGER PRIMARY KEY AUTOINCREMENT, artistName TEXT, artworkUrl100 TEXT, " +
-                "longDescription TEXT, previewUrl TEXT, trackName TEXT, primaryGenreName TEXT)";
+        String query="CREATE TABLE"+ TABLE_NAME+"(id  INTEGER PRIMARY KEY AUTOINCREMENT, "+
+                ARTIST_NAME+" TEXT, "+
+                IMAGE_URL+ " TEXT, " +
+                DESC+ " TEXT, " +
+                PREW_URL+" TEXT, "+
+                TRACK_NAME+" TEXT, "+
+                GENERE_NAME+" TEXT)";
         db.execSQL(query);
     }
 
@@ -51,7 +56,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS "+TABLE_NAME);
         onCreate(db);
     }
- //---------------------------------
+ //--------------------------------------
+ //insert new row in database as preview url is uniqu using it identify row
  public long insertNewData(MusicResponseRow musicResponseRow) {
      // get writable database as we want to write data
      SQLiteDatabase db = this.getWritableDatabase();
@@ -72,10 +78,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
      // return newly inserted row id
      return id;
  }
+
+ //check whether row is exist or not
     public Boolean checkForDataExist(MusicResponseRow musicResponseRow) {
         try {
             // get writable database as we want to write data
-            String countQuery = "SELECT * FROM " + TABLE_NAME + " where " + PREW_URL + "=" + "'somethid'";
             SQLiteDatabase db = this.getWritableDatabase();
             Cursor cursor = db.query(TABLE_NAME,
                     new String[]{"id", ARTIST_NAME, IMAGE_URL, DESC, PREW_URL, TRACK_NAME, GENERE_NAME},
@@ -89,6 +96,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }catch (Exception e){}
         return false;
     }
+ //delete row on swipe on favourite screen
     public void deleteRow(MusicResponseRow musicResponseRow) {
         // get writable database as we want to write data
         SQLiteDatabase db = this.getWritableDatabase();
@@ -96,6 +104,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 new String[]{musicResponseRow.getPreviewUrl()});
         db.close();
     }
+
+ //get all favourite list on favourite page
     public List<MusicResponseRow> getAllFavouriteList() {
         // get writable database as we want to write data
         List<MusicResponseRow> musicResponseRows=new ArrayList<>();

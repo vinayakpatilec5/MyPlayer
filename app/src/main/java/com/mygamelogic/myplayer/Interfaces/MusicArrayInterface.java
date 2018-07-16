@@ -6,5 +6,4 @@ package com.mygamelogic.myplayer.Interfaces;
 
 public interface MusicArrayInterface {
     void tappedRow(int position);
-    void swipe(int direction);
 }

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible"
+            android:id="@+id/swiperefreshparent_layout">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/dimen5"
+                    android:layout_marginLeft="@dimen/dimen3"
+                    android:text=""
+                    android:textColor="@color/gray"
+                    android:id="@+id/textview_allsong"/>
+                <android.support.v7.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="visible"
+                    android:id="@+id/recycler_view">
+                </android.support.v7.widget.RecyclerView>
+            </LinearLayout>
+        </android.support.v4.widget.SwipeRefreshLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/dimen10"
+            android:text="@string/emptysearch_text"
+            android:id="@+id/textview_nodata"
+            android:visibility="gone"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_dimen18"
+            android:gravity="center_horizontal"/>
+    </RelativeLayout>
+</LinearLayout>

@@ -1,8 +1,6 @@
 package com.mygamelogic.myplayer.Activity;
 
-import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -149,7 +147,7 @@ public class FavouriteActivity extends AppCompatActivity implements MusicArrayIn
     private void hideLoader() {
         swiperefresh_favlayout.setRefreshing(false);
     }
-//--------------------
+//--------------------------------------------------
 //recycler view call back
     @Override
     public void tappedRow(int position) {
@@ -159,8 +157,6 @@ public class FavouriteActivity extends AppCompatActivity implements MusicArrayIn
         startActivity(intent);
     }
 
-    @Override
-    public void swipe(int direction) {}
 //--------------------------
 //get color based on sdk version
     public int getColorBack(int id) {

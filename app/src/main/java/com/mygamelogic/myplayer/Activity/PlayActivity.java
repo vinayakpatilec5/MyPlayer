@@ -24,6 +24,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.google.gson.Gson;
+import com.mygamelogic.myplayer.CustomTools.MyTools;
 import com.mygamelogic.myplayer.Database.DatabaseHelper;
 import com.mygamelogic.myplayer.R;
 import com.mygamelogic.myplayer.Response.MusicResponseRow;
@@ -45,16 +46,20 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_play);
-        Intent callingIntent=getIntent();
-        Gson gson=new Gson();
-        musicResponseRow=gson.fromJson(callingIntent.getStringExtra("rowdata"),MusicResponseRow.class);
+        getData();
         initView();
         setToolbar();
         setTexualData();
         startPlayingAudio();
         startTimer();
         setFavourite();
+        setListener();
         showLoader();
+    }
+    private void getData(){
+        Intent callingIntent=getIntent();
+        Gson gson=new Gson();
+        musicResponseRow=gson.fromJson(callingIntent.getStringExtra("rowdata"),MusicResponseRow.class);
     }
  //---------------------------------------
  //set top toolbar
@@ -80,24 +85,14 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
  //----------------------------------
- //overrided methode to handel audio play
-    @Override
-    protected void onStart() {
-        super.onStart();
-
-    }
-
+ //overrided methode to handle audio play
+//
     @Override
     protected void onResume() {
         super.onResume();
         if(audioStartedPlaying){
             playAudio();
         }
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
     }
 
     @Override
@@ -128,12 +123,14 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
         imageview_play=(ImageView) findViewById(R.id.imageview_play);
         imageview_favbutton=(ImageView) findViewById(R.id.imageview_favbutton);
         swiperefreshparent_layout=(SwipeRefreshLayout) findViewById(R.id.refreshlayout_playScreen);
-
+    }
+    private void setListener(){
         findViewById(R.id.layout_playbutton).setOnClickListener(this);
         findViewById(R.id.layout_listbutton).setOnClickListener(this);
         findViewById(R.id.layout_favouritebutton).setOnClickListener(this);
     }
-
+//---------------------------------------------------------
+ //set image and text and other data
     private void setTexualData(){
         if((musicResponseRow.getArtworkUrl100()!=null)&&(!musicResponseRow.getArtworkUrl100().isEmpty())){
             ImageView imageview_playmain=(ImageView) findViewById(R.id.imageview_playmain);
@@ -272,12 +269,13 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
                 break;
         }
     }
+//======================================================================================================
  //show loader as it ll take time to load data from server
     private void showLoader() {
         try {
             swiperefreshparent_layout.bringToFront();
             swiperefreshparent_layout.setVisibility(View.VISIBLE);
-            swiperefreshparent_layout.setColorSchemeColors(getColorBack(R.color.Orange), getColorBack(R.color.LiteGreen), getColorBack(R.color.Orange), getColorBack(R.color.LiteGreen));
+            swiperefreshparent_layout.setColorSchemeColors(MyTools.getColorBack(this,R.color.Orange), MyTools.getColorBack(this,R.color.LiteGreen), MyTools.getColorBack(this,R.color.Orange), MyTools.getColorBack(this,R.color.LiteGreen));
             swiperefreshparent_layout.post(new Runnable() {
                 @Override
                 public void run() {
@@ -301,15 +299,7 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
         swiperefreshparent_layout.setVisibility(View.GONE);
     }
 
-    //get color based on sdk version
-    public int getColorBack(int id) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            return getColor(id);
-        } else {
-            return getResources().getColor(id);
-        }
-    }
-
+//======================================================================================================
 //handle favourite and vice versa from DB and image state
     private void toggleFavourite(){
         DatabaseHelper databaseHelper=new DatabaseHelper(this);

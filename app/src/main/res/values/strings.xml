@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">MyPlayer</string>
     <string name="backbtn_text">Press Back button again, in order to exit</string>
-    <string name="toolbar_text">MPlay</string>
+    <string name="toolbar_text">MPlayer</string>
     <string name="search_hinttext">Search music...</string>
     <string name="splash_tag">Listen to your favourite music from Itunes..</string>
     <string name="emptysearch_text">NO MATCH FOUND</string>
